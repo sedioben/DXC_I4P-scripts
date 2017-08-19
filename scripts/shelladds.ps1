@@ -27,5 +27,5 @@ Install-ADDSForest `
 -LogPath "C:\Windows\NTDS" `
 -NoRebootOnCompletion:$false `
 -SysvolPath "C:\Windows\SYSVOL" `
--Force:$true
--SafeModeAdministratorPassword (convertto-securestring $SafeModeAdministratorPassword -asplaintext -force)
+-Force:$true `
+-SafeModeAdministratorPassword ($SafeModeAdministratorPassword)
