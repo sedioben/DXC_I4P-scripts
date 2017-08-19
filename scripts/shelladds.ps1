@@ -7,7 +7,7 @@ Param(
    [string]$DomainName,
 	
    [Parameter(Mandatory=$True)]
-   [string]$DomainNetbiosName
+   [string]$DomainNetbiosName,
    
    [Parameter(Mandatory=$True)]
    [SecureString]$SafeModeAdministratorPassword
@@ -25,7 +25,7 @@ Install-ADDSForest `
 -ForestMode "Win2012R2" `
 -InstallDns:$true `
 -LogPath "C:\Windows\NTDS" `
--NoRebootOnCompletion:$true `
+-NoRebootOnCompletion:$false `
 -SysvolPath "C:\Windows\SYSVOL" `
 -Force:$true
--SafeModeAdministratorPassword $SafeModeAdministratorPassword
+-SafeModeAdministratorPassword ($SafeModeAdministratorPassword)
